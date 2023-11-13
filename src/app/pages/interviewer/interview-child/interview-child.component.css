@@ -1,0 +1,19 @@
+
+.hs-interviw-response-box-child-wrapper p {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+}
+
+.hs-interviw-response-box-child-wrapper p.time {
+    margin: 0 0 2px 0;
+}
+
+.hs-interviw-response-box-child-wrapper label {
+    font-size: 14px;
+}
+
+.hs-interviw-response-box-child-wrapper .hs-graybg {
+    background: #eaeaea;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}

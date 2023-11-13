@@ -1,0 +1,196 @@
+<div class="hs-joboffer-sent-response-child-wrapper">
+    <div class="hs-table-row-data" *ngIf="childData">
+        <div class="hs-graybg">
+            <div class="row no-gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 10px;">
+                    <div class="form-group">
+                        <div class="row no-gutters">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Eamil
+                                    </strong>
+                                </p>
+                                {{childData?.candidateEmailID}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Phone
+                                    </strong>
+                                </p>
+                                {{childData?.candidatePhoneNo}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Current Salary
+                                    </strong>
+                                </p>
+                                {{childData?.currentSalary}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row no-gutters">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Year Of Experience
+                                    </strong>
+                                </p>
+                                {{childData?.yearOfExperience}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Key Skills
+                                    </strong>
+                                </p>
+                                {{childData?.keySkills}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        View Resume
+                                    </strong>
+                                </p>
+                                <ul>
+                                    <li class="single-file white" (click)="onDownloadResume(childData?.curentResume)">
+                                        <span class="attachment">
+                                            <img src="assets/svg-img/attachment-file.svg" alt="file">
+                                        </span>
+                                        <span class="name">
+                                            {{ childData?.curentResume.originalFileName}}
+                                        </span>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" *ngIf="childData?.interviews?.length > 0">
+                        <div class="interview-schedule-list table data_table_area">
+                            <div class="table-header">
+                                <div class="table-row">
+                                    <div class="left">
+                                        <div class="table-col interviewer">
+                                            Interviewer
+                                        </div>
+                                        <div class="table-col round">
+                                            Round
+                                        </div>
+                                        <div class="table-col interview-date">
+                                            Date
+                                        </div>
+                                        <div class="table-col interview-status">
+                                            Status
+                                        </div>
+                                        <div class="table-col action">
+                                            Actions
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-body-pagination-wrapper">
+                                <div class="table-body">
+                                    <div class="table-row" *ngFor="let interview of childData?.interviews">
+                                        <div class="left">
+                                            <div class="table-col interviewer">
+                                                {{ interview.interviewer.firstName+' '+interview.interviewer.lastName }}
+                                            </div>
+                                            <div class="table-col round">
+                                                {{ interview.interviewRound}}
+                                            </div>
+                                            <div class="table-col interview-date">
+                                                {{ interview.interviewDate}}<br />
+                                                {{ interview.interviewStartTime}} - {{ interview.interviewEndTime}}
+                                            </div>
+                                            <div class="table-col interview-status">
+                                                <span class="status-btn-wrapper"
+                                                    [innerHtml]="interview.currentState | interviewState"></span>
+                                            </div>
+                                            <div class="table-col action">
+                                                <span *ngIf="_canViewInterviewFeedback(interview)"
+                                                    (click)="onOpenFeedbackPopup(interview)">
+                                                    <i class="fa fa-book"></i>
+                                                </span>
+                                                <span *ngIf="_canCanCancelInterview(interview)"
+                                                    (click)="onCancelInterview(interview)">
+                                                    <i class="fa fa-xmark"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hs-job-onAward-wrapper">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right mb-4"
+                    *ngIf="canViewButtonPanel">
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onRejectProfile()"
+                        *ngIf="canSeeRejectListCvBtn==true">
+                        REJECT CV
+                    </button>
+
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onProgress()"
+                        *ngIf="canSeeShortListCvBtn==true">
+                        SHORT LIST CV
+                    </button>
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onOffer()"
+                        *ngIf="canSeeOfferBtn==true">
+                        OFFER
+                    </button>
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onReject()"
+                        *ngIf="canSeeRejectedBtn==true">
+                        REJECT
+                    </button>
+
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onBackup()"
+                        *ngIf="canSeeBackedupBtn==true">
+                        BACKUP
+                    </button>
+
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onShotList()"
+                        *ngIf="canSeeShortListBtn==true">
+                        SHORT LIST
+                    </button>
+
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onSchduleMeeting()"
+                        *ngIf="canSeeScheduleMeetingBtn==true">
+                        SCHEDULE MEETING
+                    </button>
+
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onCandidateJoined()"
+                        *ngIf="canSeeJoinedBtn==true">
+                        Jioned
+                    </button>
+
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onOfferWithdrawn()"
+                        *ngIf="canSeeWithdrawBtn==true">
+                        Offer Withdrawn
+                    </button>
+
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onOfferDeclined()"
+                        *ngIf="canSeeDeclineBtn==true">
+                        Offer Declined
+                    </button>
+
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onOfferAccepted()"
+                        *ngIf="canSeeAcceptBtn==true">
+                        Offer Accepted
+                    </button>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<nav class="custom-pagination" *ngIf="totalRecords > recordsPerPage">
+    <ul #paginationRef>
+        <li (click)="onClickPage(1)" [ngClass]="{ disabled: activePage === 1 }">
+            <a href="javascript:void(0);" class="fa">
+                <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li (click)="onClickPage(activePage - 1)" [ngClass]="{ disabled: activePage === 1 }">
+            <a href="javascript:void(0);" class="fa">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </a>
+        </li>
+        <ng-container *ngIf="!isMobile;else mobileLayout">
+            <li *ngFor="let item of pages" [ngClass]="{ active: activePage === item,  hide: item < hideFirst ||
+           item > hideLast,   noAction: item === hideFirst || item === hideLast }" (click)="onClickPage(item)"
+                [attr.index]="item">
+                <a href="javascript:void(0);">
+                    {{ item === hideFirst || item === hideLast ? "..." : item }}
+                </a>
+            </li>
+        </ng-container>
+        <ng-template #mobileLayout>
+            <li>
+                {{activePage}}/{{pageCount}}
+            </li>
+        </ng-template>
+        <li (click)="onClickPage(activePage + 1)" [ngClass]="{ disabled: activePage === pageCount }">
+            <a href="javascript:void(0);" class="fa">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li (click)="onClickPage(pageCount)" [ngClass]="{ disabled: activePage === pageCount }">
+            <a href="javascript:void(0);" class="fa">
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</nav>

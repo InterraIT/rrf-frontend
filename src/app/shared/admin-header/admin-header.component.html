@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 header-left">
+    <div class="hs-site-logo">
+      <a href="/" routerLink="/">
+        <span class="pineapple_logo_placeholder">
+            <img src="./assets/img/logo.png" alt="Company Logo" title="Company Logo">
+        </span>
+      </a>
+      </div>
+  </div>
+  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 header-right">
+    <div class="hs-main-navigation">
+      <div class="hs-header-right-icons-wrapper header-fifty-desktop">
+        <div class="hs-header-right-icons">
+          <ul>
+            <li class="hs-notification">
+            </li>
+            <li class="hs-settings">
+            </li>
+            <li class="hs-profile">
+              <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="hs-desktop-profile-wrapper">
+                      <span class="hs-desktop-profile-left">
+                        <img src="./assets/svg-img/undraw_profile.svg" alt="User Logo">
+                      </span>
+                      <span class="hs-desktop-profile-right">
+                          <span class="hs-user-details">
+                              {{fullName}}
+                          </span>
+                      </span>
+                  </span>
+              </a>
+              <ul class="dropdown-menu shadow" aria-labelledby="dropdownMenuLink">
+                <li class="dropdown-item">
+                  <a href="javascript:void(0);" (click)="onOpenUpdateProfile()">
+                    <img class="img-profile" src="assets/svg-img/header-profile.svg"
+                        alt="profile_icon" />
+                    Account Settings
+                </a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="javascript:void(0);" (click)="onOpenLogout()">
+                    <img src="/assets/svg-img/logout-icon.svg" alt="Logout">
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+  <div class="logo">
+    <img src="./assets/img/logo.png" alt="Company Logo">
+  </div>
+
+  <div class="user">
+    <div class="dropdown">
+      <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="./assets/svg-img/undraw_profile.svg" alt="User Logo">
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item" href="javascript:void(0);" (click)="onOpenLogout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</header>-->

@@ -1,0 +1,59 @@
+<div class="manage-layout">
+    <div class="hs-account-setting-wrapper">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 hs-custom-header-left hs-mobile-hide">
+                <header class="hs-page-title-wrapper">
+                    <div class="hs-page-title">
+                        <figure class="title-text-icon">
+                            <img src="/assets/svg-img/account-settings-page-title.svg" alt="Account Settings" />
+                        </figure>
+                        <div class="title-text">
+                            {{'UPDATE_PROFILE.TITLE' | translate }}
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 text-right hs-custom-header-right">
+                <button type="button" class="btn miw-100 btn-secondary btn-sm ml-2" *ngIf="isCancelButtonVisible==true" (click)="onCancel()">
+                    {{ 'HOME.CANCEL_BUTTON' | translate }}
+                </button>
+                <button type="button" class="btn miw-100 btn-success btn-sm ml-2" *ngIf="isSaveButtonVisible==true" (click)="onSave()">
+                    {{ 'HOME.UPDATE_BUTTON' | translate }}
+                </button>
+
+                <button type="button" class="btn miw-100 btn-primary btn-sm ml-2" *ngIf="isEditButtonVisible" (click)="onEdit()">
+                    {{ 'HOME.EDIT_BUTTON' | translate }}
+                </button>
+            </div>
+        </div>
+        <div class="hs-account-setting">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                    <nav>
+                        <ul class="nav nav-tabs ">
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link" (click)="onChangeTab('Details')"
+                                    [class]="currentTab=='Details' ? 'active':''" #Details>
+                                    Details
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link" (click)="onChangeTab('Password')"
+                                    [class]="currentTab=='Password' ? 'active':''" #Password>
+                                    Password
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="tab-content">
+                        <div class="tab-pane fade show active">
+                            <div #ros>
+                                <router-outlet></router-outlet>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+.hs-participants-list .table-body .table-row input[type="checkbox"] {
+    opacity: 1;
+}
+span.tick{
+    line-height: 1;
+    margin: 23px 15px 0 0px;
+}
+.table-col.hs-participants-business-details-wrapper{
+    max-width: 60px;
+    margin-left: 21px;
+}
+
+/* .table-col .star{
+    justify-content: center;
+} */

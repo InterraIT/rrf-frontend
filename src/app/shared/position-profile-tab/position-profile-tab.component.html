@@ -1,0 +1,55 @@
+<div class="hs-inner-tab-container">
+    <div class="sent-job-offer-response table data_table_area" *ngIf="profilesList?.length>0">
+      <div class="table-header">
+        <div class="table-row">
+          <div class="left">
+            <div class=" table-col title">
+              Candidate
+            </div>
+            <div class=" table-col star">
+              <!-- star -->
+            </div>
+          </div>
+          <div class="right">
+            <div class=" table-col status">
+              Status
+            </div>
+            <div class=" table-col update-date">
+              Date
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="table-body">
+        <div id="devRef{{i}}" class="table-row" *ngFor="let profile of profilesList;let i = index">
+          <div class="left" (click)="expandRow('devRef' + i, profile)">
+  
+            <div class="table-col title">
+              {{profile.candidateFirstName+' '+profile.candidateLastName}}
+            </div>
+            <div class="table-col star">
+              {{profile.keySkills}}
+            </div>
+          </div>
+          <div class="right" (click)="expandRow('devRef' + i, profile)">
+            <div class="table-col status">
+              <span class="status-btn-wrapper" [innerHtml]="profile.currentState | profileState"></span>
+            </div>
+  
+            <div class="table-col update-date">
+              {{ profile.createdTimeStamp | timestampConverter:['dd/MM/yyyy'] }}
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+    <div *ngIf="profilesList?.length==0">
+      <div class="table-nodata">
+        No Profile Found
+      </div>
+    </div>
+  
+  
+  </div>

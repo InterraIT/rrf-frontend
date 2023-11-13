@@ -1,0 +1,9 @@
+.toastr-container {
+    pointer-events: none;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    position: fixed;
+    z-index: 999999;
+}

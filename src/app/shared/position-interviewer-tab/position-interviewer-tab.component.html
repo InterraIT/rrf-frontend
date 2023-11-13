@@ -1,0 +1,62 @@
+<div class="sent-job-offers table data_table_area" >
+    <div class="table-header" *ngIf="selectInterviewerList?.length>0">
+        <div class="table-row">
+            <div class="left">
+                <div class="table-col displayID" (click)="doSorting(fieldList[0])">
+                    Display ID<span [ngClass]="fieldList[0].sortingClass"></span>
+                </div>
+                <div class="table-col emailID" (click)="doSorting(fieldList[1])">
+                    Email
+                    <span [ngClass]="fieldList[1].sortingClass"></span>
+                </div>
+                <div class="table-col fullname" (click)="doSorting(fieldList[2])">
+                    Name
+                    <span [ngClass]="fieldList[2].sortingClass"></span>
+                </div>
+                <div class="table-col status">
+                    Action
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-body-pagination-wrapper">
+        <div class="table-body">
+            <div class="table-row" *ngFor="let data of selectInterviewerList" >
+                <div class="left">
+                    <div class="table-col displayID">
+                        <span class="job_id">
+                            {{ data.displayID}}
+                        </span>
+                    </div>
+                    <div class="table-col emailID">
+                        {{ data.username }}
+                    </div>
+                    <div class="table-col fullname">
+                        {{ data.fullName }}
+                    </div>
+                    <div class="table-col status">
+                        <span (click)="deleteInterviewer(data.userID)" *ngIf="canRemoveInterviewer"><i class="fa fa-trash" aria-hidden="true" style="color: red;"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="selectInterviewerList?.length==0">
+                <div class="table-nodata">
+                    No data available
+                </div>
+            </div>
+           
+            <div class="list-pagination-wrapper" *ngIf="numberOfrecords>0">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="list-pagination">
+                            <app-custom-pagination [totalRecords]="totalNumberOfrecords" [recordsPerPage]="pageSize"
+                                (onPageChange)="getDatalist($event)">
+                            </app-custom-pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

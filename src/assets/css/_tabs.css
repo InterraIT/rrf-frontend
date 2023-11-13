@@ -1,0 +1,121 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #b4b6b8;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.nav-tabs.mb-4 {
+  margin: 0 0 20px 0;
+}
+
+.hs-business-setting .nav-tabs {
+  align-items: flex-end;
+}
+/* 
+ .hs-business-setting .nav-tabs .nav-link {
+     line-height: 22px;
+     padding: 3px 18px 6px 18px;
+ } */
+
+.nav-tabs .nav-link {
+  align-items: center;
+  border: 0;
+  /* border-bottom: 4px solid transparent; */
+  border-radius: 0;
+  color: #82888c;
+  display: flex;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 0 0 -1px 0;
+  min-height: 50px;
+  min-width: 140px;
+  justify-content: center;
+  padding: 5px 18px 2px 18px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: 0.3s ease-out all;
+  -o-transition: 0.3s ease-out all;
+  transition: 0.3s ease-out all;
+  white-space: nowrap;
+}
+
+.nav-tabs .nav-link:after {
+  background: #229bff;
+  bottom: 0;
+  content: "";
+  display: none;
+  height: 4px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+.nav-tabs .nav-link.active:after,
+.nav-tabs .nav-link:hover:after {
+  display: block;
+}
+/*
+.nav-tabs .nav-link.active:hover:after{
+    bottom: 0px;
+}
+.nav-tabs .nav-link:hover:after {
+    bottom: -1px;
+}
+ */
+
+/* 
+
+.nav-tabs .nav-link:hover {
+     border-bottom-color: #229BFF;
+ }
+
+ .hs-business-setting .nav-tabs .nav-link {
+     margin: 0 0 1px 0;
+ } */
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  background-color: #fff;
+  border-bottom-color: #229bff;
+  color: #229bff;
+  font-weight: bold;
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+/* 
+ @media(max-width:1024px) {
+
+     .nav-tabs .nav-link {
+        font-size: 14px;
+     }
+ }
+*/
+
+@media (max-width: 767px) {
+  .nav-tabs .nav-link {
+    min-width: 114px;
+  }
+}

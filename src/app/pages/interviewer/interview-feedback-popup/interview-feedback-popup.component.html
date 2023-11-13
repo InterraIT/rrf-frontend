@@ -1,0 +1,92 @@
+<div class="model-inner-content-wrapper">
+    <div class="model-close-icon" (click)="activeModal.dismiss('click')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+            <path id="Path_3016" data-name="Path 3016"
+                d="M19.825,15.928l7.8-7.8a2.755,2.755,0,0,0-3.9-3.9l-7.8,7.8-7.8-7.8a2.755,2.755,0,0,0-3.9,3.9l7.8,7.8-7.8,7.8a2.756,2.756,0,1,0,3.9,3.9l7.8-7.8,7.8,7.8a2.756,2.756,0,0,0,3.9-3.9Z"
+                transform="translate(-3.429 -3.429)" fill="#f4f5f7"></path>
+        </svg>
+    </div>
+    <div class="model-inner-content">
+        <div class="hs-business-doctype-list-group">
+            <div class="modal-header no-bg">
+                <div class="hs-popup-title">
+                    <h4>Interview Appraisal Form</h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form autocomplete="off" [formGroup]="form">
+                    <div class="hs-inner-tab-container">
+                        <div class="interview-feedback-box table data_table_area"
+                            *ngIf="hiringRequirmentList?.length>0">
+                            <div class="table-header">
+                                <div class="table-row">
+                                    <div class="left">
+                                        <div class="table-col requirement">
+                                            REQUIREMENTS
+                                        </div>
+
+                                        <div class="table-col rating">
+                                            RATING (1-5)
+                                        </div>
+                                        <div class="table-col distinguishing-aspect">
+                                            DISTINGUISHING ASPECTS
+                                        </div>
+                                        <div class="table-col action">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-body">
+                                <ng-container formArrayName="hiringRequirements">
+                                    <div class="sub-table-row"
+                                        *ngFor="let hiringRequirment of hiringRequirmentList;let i = index"
+                                        [formGroupName]="i">
+                                        <div class="table-col sub-header">
+                                            <b>{{hiringRequirment.requirementTitle}}</b>&nbsp;({{hiringRequirment.requirementSubTitle}})
+                                            &nbsp;&nbsp;<a href="javascript:void(0);" (click)="onAddNewChild(i)">
+                                                <span><i class="fa fa-plus"></i>&nbsp;Add</span></a>
+                                        </div>
+                                        <ng-container formArrayName="hiringElements">
+                                            <div class="table-row"
+                                                *ngFor="let childElement of hiringRequirment.childElements;let childCnt = index"
+                                                [formGroupName]="childCnt">
+                                                <div class="left">
+                                                    <div class="table-col requirement">
+                                                        <input type="text" class="form-control" name="title" formControlName="title" />
+                                                    </div>
+                                                    <div class="table-col rating">
+                                                        <input type="text" class="form-control" name="rating" formControlName="rating" />
+                                                    </div>
+                                                    <div class="table-col distinguishing-aspect">
+                                                        <textarea type="text" class="form-control"
+                                                            name="distinguishingAspect" rows="2" formControlName="distinguishingAspect"></textarea>
+                                                    </div>
+                                                    <div class="table-col action">
+                                                        <i class="fa fa-trash" aria-hidden="true" (click)="removeElement(i,childCnt)" *ngIf="childElement.mandatory==false"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-container>
+
+
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-wrapper text-right">
+                            <button type="submit" class="btn btn-success btn-sm ml-2"
+                                (click)="onReject()">REJECT</button>
+                                <button type="submit" class="btn btn-success btn-sm ml-2"
+                                (click)="onPutOnHold()">ON-HOLD</button>
+                            <button type="submit" class="btn btn-success btn-sm ml-2"
+                                (click)="onSelect()">SELECT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

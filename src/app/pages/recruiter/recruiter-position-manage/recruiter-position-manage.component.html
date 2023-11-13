@@ -1,0 +1,93 @@
+<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+<div class="hs-sent-offer-wrapper manage-layout">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <section>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 hs-custom-header-left left-side">
+                        <header class="hs-page-title-wrapper">
+                            <div class="hs-page-title">
+                                <figure class="title-text-icon hs-mobile-hide">
+                                    <img src="assets/svg-img/received-job-offers-page-title.svg" alt="postions">
+                                </figure>
+                                <div class="hs-title-btn-outer-wrapper">
+                                    <div class="hs-btn-job-offer-status-wrapper">
+                                        <span class="title-text">
+                                            #{{ postion?.displayID }}
+                                        </span>
+                                        <span class="hs-title-btn-wrapper"
+                                            [innerHtml]="postion?.currentState |postionState">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                    <div
+                        class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right hs-custom-header-right right-side">
+                        <div class="hs-sent-offer-btn-wrapper hs-jobs-btn-wrapper">
+                            <button type="button" class="ml-2 miw-100 btn btn-primary btn-sm"
+                                *ngIf="canViewAddInterviewerBtn" (click)="onOpenInterviewerList()">
+                                ADD INTERVIEWER
+                            </button>
+
+                            <button type="button" class="ml-2 miw-100 btn btn-primary btn-sm"
+                                *ngIf="canViewAddProfileBtn" (click)="onAddProfiles()">
+                                ADD PROFILE
+                            </button>
+                            <div *ngIf="canSelectProfilebutton">
+                                <div class="dropdown">
+                                    <button class="btn btn-dots profile" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img src="/assets/img/small-dots.png" alt="dots" />
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li class="dropdown-item">
+                                            <a href="javascript:void(0);" (click)="selectProfiles()">
+                                                PROFILE REPOSITORY
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <nav>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link" (click)="onChangeTab('Details')"
+                            [class]="currentTab=='Details'?'active':''" #Details>
+                            Details
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link" (click)="onChangeTab('Interviewer')"
+                            [class]="currentTab=='Interviewer' ? 'active':''" #Interviewer>
+                            Interviewers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0);" class="nav-link" (click)="onChangeTab('Profiles')"
+                            [class]="currentTab=='Profiles' ? 'active':''" #Profiles>
+                            Profiles
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="tab-content">
+                <div class="tab-pane fade show active">
+                    <div #ros>
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files*/
+@import "~@fortawesome/fontawesome-free/css/all.css"; 
+@import "assets/css/_layout.css";
+@import "assets/css/_typography.css";
+@import "assets/css/_button.css";
+@import "assets/css/_forms.css";
+@import "assets/css/_menus.css";
+@import "assets/css/_tables.css";
+@import "assets/css/_public_layout.css";
+@import "assets/css/_header.css";
+@import "assets/css/_breadcrumbs.css";
+@import "assets/css/_sidebar.css";
+@import "assets/css/theme-overrides.css";
+@import "assets/css/_popup.css";
+@import "assets/css/_ajayj.css";
+@import "assets/css/_tabs.css";
+
+@import "assets/css/dsh_style.css";
+
+
+@import "assets/css/_datepicker.css";
+@import "assets/css/_scrolbar.css";
+@import "assets/css/recruitment.css"; 

@@ -1,0 +1,30 @@
+<div class="model-inner-content-wrapper">
+    <div class="model-inner-content">
+        <div class="hs-delete-popup">
+            <header class="modal-header">
+                <div class="hs-popup-title" *ngIf="declineLabel!=confirmLabel">
+                    <img src="../assets/icons/interrogation_icon.svg" alt="interrogation" class="confirm" />
+                    <h4>{{caption}}</h4>
+                </div>
+                <div class="hs-popup-title" *ngIf="declineLabel==confirmLabel">
+                    <h4><span *ngIf="caption!='Confirmation'"> </span>{{caption}}</h4>
+                </div>
+            </header>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left mb-4">
+                        <div class="hs-content-padding" [innerHTML]="title"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-wrapper text-right">
+                        <button type="button" class="miw-100 btn btn-secondary btn-sm " (click)="decline()"
+                            [innerHTML]="declineLabel" *ngIf="declineLabel!=confirmLabel"></button>
+                        <button type="button" class="miw-100 btn btn-success btn-sm ml-2" (click)="confirm()"
+                            [innerHTML]="confirmLabel" ngbAutofocus></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

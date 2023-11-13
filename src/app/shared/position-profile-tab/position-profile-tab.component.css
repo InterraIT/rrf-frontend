@@ -1,0 +1,45 @@
+/* sent-job-offers */
+
+.sent-job-offers .left {
+    max-width: calc(50% + 10px);
+    padding-left: 10px;
+    width: 100%;
+}
+
+.sent-job-offers .id {
+    max-width: 30%;
+}
+
+.sent-job-offers .title {
+    max-width: 35%;
+}
+
+.sent-job-offers .project {
+    max-width: 35%;
+}
+.sent-job-offers .right {
+    max-width: calc(50% - 10px);
+    width: 100%;
+}
+
+.sent-job-offers .client {
+    max-width: 25%;
+   
+}
+
+.sent-job-offers .status {
+    text-align: center;
+    max-width: 25%;
+}
+
+.sent-job-offers .rrfYear {
+    max-width: 25%;
+}
+
+.sent-job-offers .rrfNumber {
+    max-width: 25%;
+}
+
+.sent-job-offers .hs-angle-right {
+    display: none;
+}

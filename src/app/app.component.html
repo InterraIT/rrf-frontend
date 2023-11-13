@@ -1,0 +1,8 @@
+<router-outlet></router-outlet>
+<div class="toastr-container">
+    <ng-container *ngIf="toastrData?.text?.length > 0">
+        <app-custom-toastr [@toastrAnimation] [toastrData]="toastrData" (closeAction)="closeAction($event)"></app-custom-toastr>
+    </ng-container>
+</div>
+<app-custom-loader></app-custom-loader>
+

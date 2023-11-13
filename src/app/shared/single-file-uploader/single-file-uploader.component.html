@@ -1,0 +1,31 @@
+<div class="hs-single-file-uploader">
+    <div class="hs-tablet-hide">
+        <div class="form-group file-uploader-container" appDragAndDrop (fileDropped)="onFileDropped($event)">
+            <input type="file" id="fileDropRef" (change)="fileBrowseHandler($event)"
+                accept="image/png, image/bmp, image/svg+xml, image/jpeg, image/jpg, text/plain, .rtf, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+            <a class="upload-icon-wrapper">
+                <img src="assets/svg-img/upload-icon.svg" alt="upload">
+                <span class="text">
+                    Drag files to upload <br> or <br /> click to choose a file
+                </span>
+            </a>
+        </div>
+
+        <div class="hs-job-order-file-attch-wrapper form-group hs-file-attachment-wrap hs-single-file-wrapper" *ngIf="uploadedFile!=null">
+            <ul>
+                <li class="single-file">
+                    <span class="attachment">
+                        <img src="assets/svg-img/attachment-file.svg" alt="file">
+                    </span>
+                    <span class="name">
+                        <span>{{ uploadedFile?.name }}</span>                        
+                    </span>
+                    <span class="hs-progress-wrap">
+                        <app-file-upload-progress [progress]="uploadedFile?.progress">
+                        </app-file-upload-progress>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

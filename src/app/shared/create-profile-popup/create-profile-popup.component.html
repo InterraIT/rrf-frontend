@@ -1,0 +1,157 @@
+<div class="model-inner-content-wrapper">
+    <div class="model-close-icon" (click)="activeModal.dismiss('click')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+            <path id="Path_3016" data-name="Path 3016"
+                d="M19.825,15.928l7.8-7.8a2.755,2.755,0,0,0-3.9-3.9l-7.8,7.8-7.8-7.8a2.755,2.755,0,0,0-3.9,3.9l7.8,7.8-7.8,7.8a2.756,2.756,0,1,0,3.9,3.9l7.8-7.8,7.8,7.8a2.756,2.756,0,0,0,3.9-3.9Z"
+                transform="translate(-3.429 -3.429)" fill="#f4f5f7"></path>
+        </svg>
+    </div>
+
+    <div class="model-inner-content">
+        <div class="hs-business-doctype-list-group">
+            <div class="modal-header no-bg">
+                <div class="hs-popup-title">
+                    <h4>Create Profiles</h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form autocomplete="off" [formGroup]="createprofilesForm">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="candidateFirstName" class="control-label">
+                                    First Name
+                                </label>
+                                <input type="text" placeholder="First Name" class="form-control"
+                                    formControlName="candidateFirstName" name="candidateFirstName" />
+                                    <div *ngIf="candidateFirstName?.touched && !candidateFirstName?.valid">
+                                        <div class="error-msg" *ngIf="candidateFirstName?.errors?.required">
+                                            {{
+                                            "SENT_JOB_OFFER.JOB_OFFER_CUSTOMER_NAME_VALIDATION"
+                                            | translate
+                                            }}
+                                        </div>
+                                        <div class="error-msg" *ngIf="candidateFirstName?.errors?.maxlength">
+                                            {{
+                                            "SENT_JOB_OFFER.CUSTOMER_NAME_TEXT_MAXLENGTH_MSG"
+                                            | translate
+                                            }}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group required">
+                                <label for="candidateLastName" class="control-label">Last Name</label>
+                                <input formControlName="candidateLastName" type="text" class="form-control"
+                                    placeholder="Last Name" name="candidateLastName"/>
+                                    <div *ngIf="candidateFirstName?.touched && !candidateFirstName?.valid">
+                                        <div class="error-msg" *ngIf="candidateFirstName?.errors?.required">
+                                            {{
+                                            "SENT_JOB_OFFER.JOB_OFFER_LAST_NAME_VALIDATION"
+                                            | translate
+                                            }}
+                                        </div>
+                                        <div class="error-msg" *ngIf="candidateFirstName?.errors?.maxlength">
+                                            {{
+                                            "SENT_JOB_OFFER.CUSTOMER_NAME_TEXT_MAXLENGTH_MSG"
+                                            | translate
+                                            }}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="candidateEmailID" class="control-label">
+                                    Email ID
+                                </label>
+                                <input type="text" placeholder="Email ID" class="form-control"
+                                    formControlName="candidateEmailID" name="candidateEmailID"/>
+                                    <div class="error-msg" *ngIf="candidateEmailID?.touched && !candidateEmailID?.valid">
+                                        <div *ngIf="candidateEmailID?.errors?.required">
+                                            {{'SIGNUP.EMAIL_REQUIRE' | translate}}
+                                        </div>
+                                        <div *ngIf="candidateEmailID?.errors?.email">
+                                            {{'SIGNUP.EMAIL_INVALID' | translate}}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group required">
+                                <label for="candidatePhoneNo" class="control-label">Phone No</label>
+                                <input formControlName="candidatePhoneNo" type="text" class="form-control"
+                                    placeholder="Phone No" name="candidatePhoneNo" />
+                                    <div class="error-msg" *ngIf="candidatePhoneNo?.touched && !candidatePhoneNo?.valid">
+                                        <div *ngIf="candidatePhoneNo?.errors?.required">
+                                            {{'BUSINESS.REQUIRED_FIELD_PHONE' | translate}}
+                                        </div>
+                                        <div *ngIf="candidatePhoneNo?.errors?.maxlength">
+                                            {{'BUSINESS.PATTERN_FIELD_PHONE' | translate}}
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="yearOfExperience" class="control-label">
+                                    Year Of Experience
+                                </label>
+                                <input type="text" placeholder="Year Of Experience" class="form-control"
+                                    formControlName="yearOfExperience" name="yearOfExperience" />
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group required">
+                                <label for="currentSalary" class="control-label">Current Salary</label>
+                                <input formControlName="currentSalary" type="text" class="form-control"
+                                    placeholder="Current Salary" name="currentSalary" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label for="currencyCode" class="control-label">
+                                    Currency Code
+                                </label>
+                                <input type="text" placeholder="Currency Code" class="form-control"
+                                    formControlName="currencyCode" name="currencyCode" />
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group required">
+                                <label for="keySkills" class="control-label">Skills</label>
+                                <input formControlName="keySkills" type="text" class="form-control"
+                                    placeholder="Skills" name="keySkills" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                               <app-single-file-uploader [objectType]="objectType" [objectID]="objectID" [loggedinUserID]="loggedinUserID"
+                               (fileUploaded)="onFileUploaded($event)">
+                            </app-single-file-uploader>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-wrapper text-right">
+                        <button type="button" class="btn btn-secondary btn-sm ml-2"
+                            (click)="activeModal.dismiss('click')">CANCEL</button>
+                        <button type="submit" class="btn btn-success btn-sm ml-2" (click)=" onSubmit()">SAVE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

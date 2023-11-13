@@ -1,0 +1,178 @@
+ .hs-signup-wrapper {
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin: 0 auto;
+     max-width: 370px;
+     min-height: 100vh;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     padding: 20px 0;
+     width: 100%;
+ }
+
+ .hs-app-signup-success-wrapper {
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin: 0 auto;
+     max-width: 370px;
+     min-height: 100vh;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     padding: 20px 0;
+     width: 100%;
+ }
+
+ .hs-signup-verification-wrapper {
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin: 0 auto;
+     max-width: 370px;
+     min-height: 100vh;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     padding: 20px 0;
+     width: 100%;
+ }
+
+
+ .hs-verification-wrapper {
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin: 0 auto;
+     max-width: 370px;
+     min-height: 100vh;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     padding: 20px 0;
+     width: 100%;
+ }
+
+ .hs-verification-wrapper p {
+     color: #596065;
+     font-size: 20px;
+     line-height: 24px;
+     margin: 0 0 42px 0;
+ }
+
+ .hs-verification-wrapper p:first-of-type {
+     margin: 0 0 40px 0;
+ }
+
+ .hs-verification-wrapper p:last-of-type {
+     font-size: 20px;
+     line-height: 24px;
+     margin: 0 auto;
+     max-width: 254px;
+ }
+
+
+ .hs-login-wrapper {
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin: 0 auto;
+     max-width: 370px;
+     min-height: 100vh;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     padding: 20px 0;
+     width: 100%;
+ }
+
+ .hs-create-new-business-wrapper {
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin: 0 auto;
+     max-width: 370px;
+     min-height: 100vh;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     padding: 20px 0;
+     width: 100%;
+ }
+
+ .hs-create-new-business-wrapper .header {
+     font-size: 21px;
+ }
+
+ .hs-form-text {
+     color: #82888C;
+ }
+
+ .hs-or-text {
+     color: #82888C;
+     font-size: 30px;
+     line-height: 1.5;
+     text-align: center;
+ }
+
+
+
+ .hs-unregistered-user-signup-wrapper {
+     -webkit-box-align: center;
+     -ms-flex-align: center;
+     align-items: center;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin: 0px auto;
+     max-width: 370px;
+     min-height: 100vh;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     padding: 20px 0;
+     width: 100%;
+ }
+
+ .hs-unregistered-user-signup-wrapper h2 {
+     color: #82888C;
+     font-size: 30px;
+     line-height: 1.5;
+     margin: 0 0 30px 0;
+ }
+/* 
+ .hs-unregistered-user-signup-wrapper .form-group.form-check {
+     padding-left: 25px;
+ }
+
+ .hs-unregistered-user-signup-wrapper .form-check input {
+     left: 0;
+     margin: 0;
+     position: absolute;
+     top: 0;
+ } */
+
+
+ .hs-app-signup-success-wrapper h6 strong {
+     display: block;
+ }

@@ -1,0 +1,46 @@
+<div class="hs-login-wrapper">
+    <div class="card shadow rounded">
+        <div class="card-body">
+            <form [formGroup]="signinForm" (ngSubmit)="onLogin()">
+                <div class="form-group text-center">
+                    <span class="hs-login-logo">
+                        <img src="/assets/img/logo.png" alt="InterraIT" title="InterraIT">
+                    </span>
+              
+                </div>
+                <div class="form-group mb-hf">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" style="margin-top:10px" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter email" name="username"
+                        formControlName="username">
+                        <div class="error-msg" *ngIf="username?.touched && !username?.valid">
+                            <div *ngIf="username?.errors?.required">
+                                {{'SIGNUP.EMAIL_REQUIRE' | translate}}
+                            </div>
+                            <div *ngIf="username?.errors?.email">
+                                {{'SIGNUP.EMAIL_INVALID' | translate}}
+                            </div>
+                        </div>
+                </div>
+                <div class="form-group mb-hf">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" style="margin-top:10px" class="form-control" id="exampleInputPassword1"
+                        placeholder="Password" name="password" formControlName="password" >
+
+                        <div class="error-msg" *ngIf="password?.touched && !password?.valid">
+                            <div *ngIf="password?.errors?.required">
+                                {{'SIGNUP.PASSWORD_REQUIRE' | translate}}
+                            </div>
+                            <div *ngIf="password?.errors?.invalidcred">
+                                {{'The credentials you have entered are not valid'}}
+                            </div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary  btn-lg btn-block" style="margin-top:20px; padding:2px"
+                    (click)="onLogin()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

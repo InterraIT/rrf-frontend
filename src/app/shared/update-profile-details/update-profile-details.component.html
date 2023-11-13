@@ -1,0 +1,78 @@
+<div class="hs-inner-tab-container hs-update-profile-details">
+    <div class="hs-update-profile-details-container hs-mt-10">
+      <form autocomplete="off" [formGroup]="detailsForm" >
+        <div class="row">
+          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+            <div class="form-group required">
+              <label for="firstName" class="control-label">
+                {{ "UPDATE_PROFILE.FNAME" | translate }}
+              </label>
+              <input class="form-control" type="text" formControlName="firstName" autocomplete="disabled"
+              *ngIf='editMode'/>
+              <div class="hs-non-editable-mode" *ngIf='!editMode'>
+                <summary>
+                  {{firstName?.value}}
+                </summary>
+              </div>
+              <div *ngIf="firstName?.touched && !firstName?.valid">
+                <div class="error-msg" *ngIf="firstName?.errors?.required">
+                  {{ "UPDATE_PROFILE.FNAME_REQUIRE" | translate }}
+                </div>
+                <div class="error-msg" *ngIf="firstName?.errors?.maxlength">
+                  {{ "HOME.FNAME_LENGTH" | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div class="form-group required">
+              <label for="lastName" class="control-label">
+                {{ "UPDATE_PROFILE.LNAME" | translate }}
+              </label>
+              <input class="form-control" type="text" formControlName="lastName" autocomplete="disabled"
+                *ngIf='editMode' />
+              <div class="hs-non-editable-mode" *ngIf='!editMode'>
+                <summary>
+                  {{lastName?.value}}
+                </summary>
+              </div>
+              <div *ngIf="lastName?.touched && !lastName?.valid">
+                <div class="error-msg" *ngIf="lastName?.errors?.required">
+                  {{ "UPDATE_PROFILE.LNAME_REQUIRE" | translate }}
+                </div>
+                <div class="error-msg" *ngIf="lastName?.errors?.maxlength">
+                  {{ "HOME.LNAME_LENGTH" | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div class="form-group required">
+              <label for="username" class="control-label">
+                {{ "UPDATE_PROFILE.EMAIL" | translate }}
+              </label>
+              <!-- <input class="form-control" type="email" formControlName="username" autocomplete="disabled"
+                *ngIf='editMode' /> -->
+              <div class="hs-non-editable-mode" *ngIf='!editMode'>
+                <summary>
+                  {{username?.value}}
+                </summary>
+              </div>
+              <!-- <div *ngIf="username?.touched ">
+                <div class="error-msg" *ngIf="username?.errors?.required">
+                  {{ "UPDATE_PROFILE.EMAIL_REQUIRE" | translate }}
+                </div>
+                <div class="error-msg" *ngIf="username?.errors?.email">
+                  {{ "UPDATE_PROFILE.EMAIL_INVALID" | translate }}
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

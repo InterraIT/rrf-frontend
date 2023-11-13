@@ -1,0 +1,137 @@
+<div class="model-inner-content-wrapper">
+    <div class="model-close-icon" (click)="activeModal.dismiss('click')">
+        <img src="assets/svg-img/popup-close.svg" alt="Popup Close" />
+    </div>
+    <div class="model-inner-content no-bg">
+        <div class="hs-participant-list-popup">
+            <div class="modal-header hs-title-with-input">
+                <div class="hs-popup-title">
+                    <h4>Schedule Meeting</h4>
+                </div>
+                <div class="hs-title-with-search">
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <form autocomplete="off" [formGroup]="scheduleForm">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    Select Round
+                                </label>
+                                <select class="form-control select" formControlName="interviewRound">
+                                    <option *ngFor="let round of roundList" value="{{round.name}}">{{round.name}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <div class="interviwer-response-box data_table_area table">
+                                    <div class="table-header">
+                                        <div class="table-row">
+                                            Select Interviewers
+                                        </div>
+                                    </div>
+                                    <div class="table-body">
+                                        <div class="table-row" *ngFor="let interviewer of interviewerList">
+                                            <div class="left">
+                                                <div class="table-col selcheckbox">
+                                                    <input type="checkbox"  [value]="interviewer.userID" (change)="onCheckChange($event)">
+                                                </div>
+                                                <div class="table-col fullname">
+                                                    {{interviewer.fullName}}
+                                                </div>
+                                                <div class="table-col emailaddress">
+                                                    {{interviewer.username}}
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    Date
+                                </label>
+                                <div class="form-group input">
+                                    <input type="text" placeholder="Select Date" class="form-control with-icon"
+                                        bsDatepicker #startdate="bsDatepicker" (onShown)="onShowPicker($event)"
+                                        [bsConfig]="bsConfigJobStartDate" (ngModelChange)="setDateConfig()"
+                                        formControlName="interviewDate" />
+                                    <span class="expiry_date" (click)="startdate.toggle()">
+                                        <img src="/assets/svg-img/GreayCalendar.svg" alt="calendar" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    Start Time
+                                </label>
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                        style="padding-right: 0px;">
+                                        <input type="text" class="form-control" placeholder="hours"
+                                            formControlName="interviewStartHour" />
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                        style="padding-left: 0px;">
+                                        <input type="text" class="form-control" placeholder="minutes"
+                                            formControlName="interviewStartMinute" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    End Time
+                                </label>
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                        style="padding-right: 0px;">
+                                        <input type="text" class="form-control" placeholder="hours"
+                                            formControlName="interviewEndHour" />
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                        style="padding-left: 0px;">
+                                        <input type="text" class="form-control" placeholder="minutes"
+                                            formControlName="interviewEndMinute" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hs-participant-btn-wrapper">
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                                <div class="hs-button-wrapper">
+                                    <button type="button" class="miw-100 btn btn-secondary btn-sm"
+                                        (click)="activeModal.dismiss('click')" ngbAutofocus>
+                                        CANCEL
+                                    </button>
+                                    <button type="button" class="miw-100 btn btn-success btn-sm ml-2"
+                                        (click)="onSchedule()">
+                                        SCHEDULE
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

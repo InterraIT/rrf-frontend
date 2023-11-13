@@ -1,0 +1,666 @@
+.modal {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100%;
+  left: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  outline: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+}
+
+.show.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal-dialog {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 90%;
+  position: relative;
+  width: 100%;
+}
+
+.modal-content {
+  width: 100%;
+}
+
+.model-inner-content-wrapper {
+  position: relative;
+}
+
+.model-close-icon {
+  background: #b4b6b8;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 45px;
+  margin: 0 -50px -40px auto;
+  padding: 10px;
+  width: 45px;
+  z-index: 99;
+
+  /*     
+    margin: 0 0px 0 auto; 
+    position: absolute;
+    right: -50px;
+    top: 0px;  */
+}
+
+.model-inner-content {
+  background: #fff;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: auto;
+  margin: 0 auto;
+  max-height: 85vh;
+  outline: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  pointer-events: auto;
+  position: relative;
+  width: 100%;
+}
+
+.modal-header {
+  background-color: #229bff;
+  border-bottom: 0px solid #e3e6f0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 20px 20px 19px 20px;
+  position: relative;
+}
+
+.model-inner-content.no-bg .modal-header,
+.modal-header.no-bg {
+  background: transparent;
+}
+
+.modal-header .close {
+  background: transparent;
+  border: 0 none;
+  color: #000;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 62px;
+  line-height: 1;
+  margin: 0;
+  opacity: 0.5;
+  padding: 1rem 1rem;
+  position: absolute;
+  right: 0;
+  text-shadow: 0 1px 0 #fff;
+  top: 0;
+  width: 62px;
+}
+
+.modal-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.modal-header.no-bg .modal-title {
+  text-align: left;
+}
+
+.model-inner-content.no-bg .modal-title {
+  text-align: left;
+}
+
+.hs-popup-title {
+  text-align: center;
+  width: 100%;
+}
+
+.modal-header.no-bg .hs-popup-title {
+  text-align: left;
+}
+
+.hs-popup-title h4 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.modal-header.no-bg .hs-popup-title h4 {
+  color: #2f383f;
+  text-align: left;
+}
+
+.model-inner-content.no-bg .hs-popup-title h4 {
+  color: #2f383f;
+  text-align: left;
+}
+
+.hs-title-with-input {
+  -webkit-box-align: self-start;
+  -ms-flex-align: self-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.hs-title-with-input .hs-popup-title {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.hs-title-with-input .hs-title-with-search {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.modal-body {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 5%;
+  position: relative;
+}
+
+.modal-body form {
+  padding: 0 5%;
+}
+
+.modal-footer {
+  padding: 0px;
+}
+.multiple-file-uploader .model-inner-content-wrapper {
+  margin: 0 auto;
+  max-width: 1001px;
+}
+/* full-dialog */
+
+.multiple-file-uploader,
+.business-document-list-popup,
+.staff-document-uploader,
+.hs-supporting-documents-popup,
+.hs-supporting-business-documents-popup,
+.work-note-add-edit-popup,
+.work-note-doc-attachments {
+  padding: 0px;
+}
+
+.single-file-uploader .model-inner-content,
+.multiple-file-uploader .model-inner-content,
+.business-document-list-popup .model-inner-content,
+.staff-document-uploader .model-inner-content,
+.hs-supporting-documents-popup .model-inner-content,
+.hs-supporting-business-documents-popup .model-inner-content,
+.business-doctype-list-group .model-inner-content,
+.work-note-add-edit .model-inner-content,
+.work-note-doc-attachments .model-inner-content {
+  padding: 20px 20px;
+}
+
+.multiple-file-uploader .modal-header,
+.business-document-list-popup .modal-header,
+.staff-document-uploader .modal-header,
+.hs-supporting-documents-popup .modal-header,
+.hs-supporting-business-documents-popup .modal-header,
+.business-doctype-list-group .modal-header,
+.work-note-add-edit .modal-header,
+.work-note-doc-attachments .modal-header {
+  padding: 0 0 25px 0;
+}
+
+.multiple-file-uploader .modal-body,
+.business-document-list-popup .modal-body,
+.staff-document-uploader .modal-body,
+.hs-supporting-documents-popup .modal-body,
+.hs-supporting-business-documents-popup .modal-body,
+.business-doctype-list-group .modal-body,
+.work-note-add-edit .modal-body,
+.work-note-doc-attachments .modal-body {
+  padding: 0;
+}
+
+.single-file-uploader .modal-body form,
+.multiple-file-uploader .modal-body form,
+.business-document-list-popup .modal-body form,
+.staff-document-uploader .modal-body form,
+.hs-supporting-documents-popup .modal-body form,
+.hs-supporting-business-documents-popup .modal-body form,
+.business-doctype-list-group .modal-body form,
+.work-note-add-edit .modal-body form,
+.work-note-doc-attachments .modal-body form {
+  padding: 0;
+}
+
+.participant-list-popup .modal-dialog {
+  max-width: 840px;
+  width: 100%;
+}
+
+.hs-participant-list-popup .modal-header {
+  align-items: center;
+  padding: 13px 20px;
+}
+
+.participant-list-popup .modal-body {
+  padding: 0 24px;
+}
+
+.hs-participant-list-popup .hs-participant-btn-wrapper {
+  padding: 30px 0;
+}
+
+.job-instructions-edit-popup .modal-dialog {
+  max-width: 963px;
+  width: 90%;
+}
+
+/* app-create-profile-popup */
+.app-create-profile-popup .modal-dialog {
+  max-width: 691px;
+  width: 90%;
+}
+
+.app-create-profile-popup .model-inner-content {
+  padding: 5px 40px;
+}
+
+.app-create-profile-popup .modal-header {
+  padding: 20px 0px;
+}
+
+.app-create-profile-popup .modal-footer {
+  padding: 34px 0;
+}
+
+/* app-interview-feedback-popup */
+.app-interview-feedback-popup .modal-dialog {
+  max-width: 700px;
+  width: 90%;
+}
+
+.app-interview-feedback-popup .model-inner-content {
+  padding: 5px 40px;
+}
+
+.app-interview-feedback-popup .modal-header {
+  padding: 20px 0px;
+}
+
+.app-interview-feedback-popup .modal-footer {
+  padding: 34px 0;
+}
+
+/* job-post-success-popup */
+.hs-job-offer-post-success-popup .modal-dialog {
+  max-width: 650px;
+  width: 90%;
+}
+
+.hs-job-post-success-popup .top {
+  padding: 20px;
+}
+
+.hs-job-post-success-popup-logo {
+  padding: 20px 0;
+  position: relative;
+  text-align: center;
+}
+
+.hs-job-post-success-popup-logo img {
+  height: auto;
+  max-height: 50px;
+  max-width: 100%;
+  width: 50px;
+}
+
+.hs-job-post-success-popup .top p {
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.hs-job-post-success-popup .bottom {
+  position: relative;
+}
+
+.hs-job-post-success-popup-details {
+  background: #f4f5f7;
+  padding: 35px;
+}
+
+.hs-job-post-success-popup-details ul {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.hs-job-post-success-popup-details ul li {
+  margin: 0 0 40px 0;
+}
+
+.hs-job-post-success-popup-details ul li:last-of-type {
+  margin: 0;
+}
+
+.hs-job-post-success-popup-details ul li a {
+  align-items: center;
+  color: #2f383f;
+  display: flex;
+  vertical-align: top;
+}
+
+.hs-job-post-success-popup-details .hs-blue-bg {
+  align-items: center;
+  background: #229bff;
+  border-radius: 5px;
+  display: flex;
+  height: 36px;
+  margin-right: 10px;
+  justify-content: center;
+  width: 36px;
+}
+
+.hs-cancel-job-confirmation {
+  position: relative;
+}
+
+.hs-cancel-job-confirmation .modal-body form {
+  padding: 0 30px;
+  position: relative;
+}
+
+.hs-cancel-job-confirmation p {
+  margin-bottom: 20px;
+}
+
+.hs-cancel-job-confirmation .hs-btn-wrapper {
+  margin-top: 6px;
+}
+
+.hs-cancel-job-confirmation .form-group.checkbox {
+  padding-left: 30px;
+}
+
+.hs-cancel-job-confirmation input[type="checkbox"] {
+  left: 0;
+  margin-top: 0;
+  position: absolute;
+  vertical-align: text-top;
+}
+
+.participant-list-popup .model-inner-content.no-bg {
+  overflow: hidden;
+}
+
+.hs-participants-list .table-body {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.hs-multi-file-uploader-content {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: column;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.hs-multi-file-uploader-content .modal-header {
+  width: 100%;
+}
+.hs-multi-file-uploader-content .modal-body {
+  max-width: 100%;
+  width: 100%;
+}
+.hs-multi-file-uploader-content .modal-footer {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 500px;
+  }
+
+  .multiple-file-uploader .modal-dialog,
+  .business-document-list-popup .modal-dialog,
+  .staff-document-uploader .modal-dialog,
+  .hs-supporting-documents-popup .modal-dialog,
+  .hs-supporting-business-documents-popup .modal-dialog,
+  .work-note-doc-attachments .modal-dialog {
+    margin: 0 auto;
+    max-width: 80%;
+    width: 100%;
+  }
+
+  .hs-title-with-input .hs-popup-title {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: 70%;
+    width: 100%;
+  }
+
+  .hs-title-with-input .hs-title-with-search {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+    width: 100%;
+  }
+}
+@media (min-width: 1199px) and (max-width: 1920px) {
+  .multiple-file-uploader .modal-dialog,
+  .business-document-list-popup .modal-dialog,
+  .staff-document-uploader .modal-dialog,
+  .hs-supporting-documents-popup .modal-dialog,
+  .hs-supporting-business-documents-popup .modal-dialog,
+  .work-note-doc-attachments .modal-dialog {
+    max-width: 1100px;
+  }
+}
+@media (min-width: 1025px) {
+  .hs-multi-file-uploader-content {
+    min-height: 490px;
+  }
+}
+@media (min-width: 1921px) {
+  .document-viewer-pop-up .modal-dialog,
+  .multiple-file-uploader .modal-dialog,
+  .business-document-list-popup .modal-dialog,
+  .staff-document-uploader .modal-dialog,
+  .hs-supporting-documents-popup .modal-dialog,
+  .hs-supporting-business-documents-popup .modal-dialog,
+  .work-note-doc-attachments .modal-dialog {
+    max-width: 1100px;
+  }
+  .hs-multi-file-uploader-content {
+    min-height: 518px;
+  }
+}
+
+.business-document-list-popup .model-inner-content {
+  overflow: hidden;
+}
+.business-documents {
+}
+
+.business-documents .table-body {
+  max-height: 50vh;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .full-dialog .modal-dialog {
+    max-width: 85%;
+    width: 100%;
+  }
+
+  .multiple-file-uploder .table-row {
+    padding-right: 50px;
+  }
+
+  .multiple-file-uploder .filename {
+    max-width: 35%;
+  }
+
+  .multiple-file-uploder .doctype {
+    max-width: 35%;
+  }
+
+  .multiple-file-uploder .doctype .form-group {
+    max-width: 90%;
+  }
+
+  .multiple-file-uploder .expiry {
+    max-width: 30%;
+  }
+
+  .multiple-file-uploder .action {
+    max-width: 50px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  .job-completion-edit-popup .modal-dialog {
+    max-width: 600px;
+  }
+
+  .job-instructions-edit-popup .modal-dialog {
+    width: 85%;
+  }
+}
+@media (max-width: 767px) {
+  .model-close-icon {
+    margin: 0 0 10px auto;
+  }
+
+  .multiple-file-uploder .table-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-right: 50px;
+  }
+
+  .multiple-file-uploder .filename {
+    max-width: 100%;
+  }
+
+  .multiple-file-uploder .doctype {
+    max-width: 100%;
+  }
+
+  .multiple-file-uploder .doctype .form-group {
+    max-width: 100%;
+  }
+
+  .multiple-file-uploder .expiry {
+    max-width: 100%;
+  }
+
+  .single-file-uploader .model-inner-content,
+  .multiple-file-uploader .model-inner-content,
+  .business-document-list-popup .model-inner-content,
+  .staff-document-uploader .model-inner-content,
+  .hs-supporting-documents-popup .model-inner-content,
+  .hs-supporting-business-documents-popup .model-inner-content,
+  .business-doctype-list-group .model-inner-content,
+  .work-note-add-edit .model-inner-content,
+  .work-note-doc-attachments .model-inner-content {
+    padding: 16px;
+  }
+
+  .multiple-file-uploader .model-header,
+  .business-document-list-popup .model-header,
+  .staff-document-uploader .model-header,
+  .hs-supporting-documents-popup .model-header,
+  .hs-supporting-business-documents-popup .model-header,
+  .business-doctype-list-group .model-header,
+  .work-note-add-edit .model-header,
+  .work-note-doc-attachments .modal-header,
+  .modal-header.hs-title-with-input {
+    padding: 0 0 0px 0;
+  }
+
+  .hs-participant-list-popup .modal-header {
+    padding: 16px;
+  }
+
+  .multiple-file-uploader .model-header > div,
+  .business-document-list-popup .model-header > div,
+  .staff-document-uploader .model-header > div,
+  .hs-supporting-documents-popup .model-header > div,
+  .hs-supporting-business-documents-popup .model-header > div,
+  .business-doctype-list-group .model-header > div,
+  .work-note-add-edit .model-header > div,
+  .work-note-doc-attachments .modal-header > div,
+  .hs-title-with-input > div {
+    padding: 0 0 20px 0;
+  }
+
+  .hs-participant-list-popup .hs-title-with-input .hs-title-with-search {
+    padding: 0 0 0px 0;
+  }
+
+  .participant-list-popup .modal-body {
+    padding: 0 16px;
+  }
+
+  .job-completion-edit-popup .modal-header {
+    padding: 20px 0px 0px 0px;
+  }
+  .job-completion-edit-popup .modal-dialog {
+    max-width: 90%;
+  }
+  .business-documents .table-body {
+    margin-bottom: 20px;
+  }
+  .hs-multifile-uploader-popup .model-footer .text-right {
+    text-align: center;
+  }
+}

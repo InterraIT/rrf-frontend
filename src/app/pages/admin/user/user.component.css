@@ -1,0 +1,23 @@
+/* sent-job-offers */
+
+.sent-job-offers .left {
+    max-width: calc(100% + 10px);
+    padding-left: 10px;
+    width: 100%;
+}
+
+.sent-job-offers .displayID {
+    max-width: 22%;
+}
+
+.sent-job-offers .emailID {
+    max-width: 22%;
+}
+
+.sent-job-offers .fullname {
+    max-width: 22%;
+}
+
+.sent-job-offers .usertype {
+    max-width: 22%;
+}

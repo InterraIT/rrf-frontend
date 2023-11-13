@@ -1,0 +1,99 @@
+.hs-no-breadcrumbs {
+  min-height: 13px;
+}
+.hs-no-breadcrumbs .hs-breadcrumbs-wrapper {
+  display: none;
+}
+.no-graybar .hs-create-job-btn-wrapper {
+  margin: 0;
+  position: relative;
+  text-align: right;
+}
+
+.no-breadcrumbs {
+  height: 0;
+  margin-bottom: 12px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.hs-create-job-btn-wrapper {
+  margin: 0;
+  position: relative;
+  text-align: right;
+}
+.hs-breadcrumbs-wrapper {
+  display: block;
+  margin: 0;
+  position: relative;
+}
+
+.hs-breadcrumbs-wrapper > ul {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0 0 15px 0;
+  min-height: 20px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.hs-breadcrumbs-wrapper > ul > li {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+}
+.hs-breadcrumbs-wrapper > ul > li:not(:last-of-type) {
+  margin-right: 10px;
+}
+.hs-breadcrumbs-wrapper > ul > li > a {
+  color: #b4b6b8;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.2em;
+  text-decoration: none;
+  text-transform: capitalize;
+  vertical-align: middle;
+}
+
+.hs-breadcrumbs-wrapper > ul > li:last-of-type > a {
+  color: #82888c;
+}
+
+.hs-breadcrumbs-wrapper > ul > li span.breadcrumbs-arrow {
+  background: transparent url("/assets/svg-img/breadcrumbs-arrow.svg") no-repeat
+    center center/cover;
+  display: inline-block;
+  height: 9px;
+  margin-left: 10px;
+  vertical-align: middle;
+  width: 6px;
+}
+.hs-breadcrumbs-wrapper > ul > li:last-of-type span.breadcrumbs-arrow {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hs-breadcrumbs-wrapper > ul {
+    margin-top: 70px;
+  }
+  .no-graybar .hs-breadcrumbs-wrapper > ul {
+    margin-top: 10px;
+  }
+}

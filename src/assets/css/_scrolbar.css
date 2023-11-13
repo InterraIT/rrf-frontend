@@ -1,0 +1,183 @@
+.multiple-file-uploder .table-body::-webkit-scrollbar {
+  width: 5px;
+}
+.multiple-file-uploder .table-body::-webkit-scrollbar-track {
+  background-color: #c1c1c1;
+}
+.multiple-file-uploder .table-body::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+.multiple-file-uploder .table-body::-webkit-scrollbar-thumb:hover {
+  background-color: #797979;
+}
+
+.dropdown-menu.dropdown-menu-business::-webkit-scrollbar {
+  width: 5px;
+}
+.dropdown-menu.dropdown-menu-business::-webkit-scrollbar-track {
+  background-color: #c1c1c1;
+}
+.dropdown-menu.dropdown-menu-business::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+.dropdown-menu.dropdown-menu-business::-webkit-scrollbar-thumb:hover {
+  background-color: #797979;
+}
+
+.model-inner-content-wrapper .viewer-wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+.model-inner-content-wrapper .viewer-wrapper::-webkit-scrollbar-track {
+  background-color: #c1c1c1;
+}
+.model-inner-content-wrapper .viewer-wrapper::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+.model-inner-content-wrapper .viewer-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #797979;
+}
+
+cdk-virtual-scroll-viewport::-webkit-scrollbar {
+  width: 5px;
+}
+cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
+  background-color: #c1c1c1;
+}
+cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb:hover {
+  background-color: #797979;
+}
+
+.business-documents .table-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.business-documents .table-body::-webkit-scrollbar-thumb {
+  background-color: #b4b6b8;
+  border-radius: 20px;
+}
+
+.notification-popup .table-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.notification-popup .table-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.notification-popup .table-body::-webkit-scrollbar-thumb {
+  background-color: #f0f1f2;
+  border-radius: 20px;
+}
+.notification-popup .table-body::-webkit-scrollbar-thumb:hover {
+  background-color: #797979;
+}
+
+.hs-body-overflow::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hs-body-overflow::-webkit-scrollbar-thumb {
+  background: #b4b6b8;
+  border-radius: 20px;
+}
+
+.hs-participants-list .table-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hs-participants-list .table-body::-webkit-scrollbar-track {
+  background-color: #c1c1c1;
+}
+
+.hs-participants-list .table-body::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+
+.hs-participants-list .table-body::-webkit-scrollbar-thumb:hover {
+  background-color: #797979;
+}
+
+.model-inner-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.model-inner-content::-webkit-scrollbar-track {
+  background-color: #c1c1c1;
+}
+
+.model-inner-content::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+}
+
+.model-inner-content::-webkit-scrollbar-thumb:hover {
+  background-color: #797979;
+}
+
+.hs-add-staff-participant::-webkit-scrollbar {
+  width: 2px;
+}
+
+.hs-add-staff-participant::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.hs-add-staff-participant::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+}
+
+.hs-add-staff-participant::-webkit-scrollbar-thumb:hover {
+  background-color: #c1c1c1;
+}
+
+textarea.form-control::-webkit-scrollbar {
+  width: 5px;
+}
+textarea.form-control::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+textarea.form-control::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+}
+textarea.form-control::-webkit-scrollbar-thumb:hover {
+  background-color: #c1c1c1;
+}
+
+@media (min-width: 768px) {
+  .nav.nav-tabs::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .nav.nav-tabs::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .nav.nav-tabs::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+  }
+
+  .nav.nav-tabs::-webkit-scrollbar-thumb:hover {
+    background-color: #c1c1c1;
+  }
+
+  .table-body-pagination-wrapper .table-body::-webkit-scrollbar {
+    width: 5px;
+  }
+  .table-body-pagination-wrapper .table-body::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .table-body-pagination-wrapper .table-body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px;
+  }
+  .table-body-pagination-wrapper .table-body::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+  }
+} /**/

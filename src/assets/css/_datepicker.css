@@ -1,0 +1,189 @@
+/*date picker*/
+
+body .bs-datepicker {
+    align-items: flex-start;
+    background: #fff;
+    border: 0.5px solid #B4B6B8;
+    box-shadow: 0px 2px 3px 0px #00000033;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+body .bs-datepicker-container {
+    max-width: 290px;
+    padding: 0px;
+}
+
+body .theme-green .bs-datepicker-head {
+    background-color: transparent;
+    min-width: 290px;
+}
+
+body .bs-datepicker-head button {
+    background: transparent;
+    border: 0;
+    color: #229BFF;
+    cursor: pointer;
+    display: inline-block;
+    height: auto;
+    line-height: 1.5;
+    min-height: 30px;
+    padding: 0;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    vertical-align: top;
+}
+
+body .bs-datepicker-head button.next,
+body .bs-datepicker-head button.previous {
+    border-radius: 0;
+    height: 30px;
+    width: 20px;
+}
+
+body .bs-datepicker-head button:hover {
+    background-color: transparent;
+}
+
+body .bs-datepicker-head button.next span,
+body .bs-datepicker-head button.previous span {
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 28px;
+    height: 100%;
+    line-height: 1;
+    position: relative;
+    width: 100%;
+}
+
+body .bs-datepicker-head button.current {
+    background: #F4F5F7;
+    border-radius: 0px;
+    color: #82888C;
+    max-width: 100%;
+    padding: 0 0px;
+    text-align: left;
+    width: 100px;
+}
+
+body .bs-datepicker-head button.current span {
+    background: transparent url('/assets/svg-img/datepicker-arrow.svg') no-repeat calc(100% - 12px) center/12px;
+    display: block;
+    padding: 0 20px 0 10px;
+}
+
+body .bs-datepicker-body {
+    border: 0px solid #e9edf0;
+    border-radius: 0;
+    min-height: 0px;
+    min-width: 0px;
+    padding: 10px;
+}
+
+body .bs-datepicker-body table th {
+    color: #2F383F;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+body .bs-datepicker-body table td {
+    color: #2F383F;
+    padding: 0;
+    position: relative;
+    text-align: center;
+}
+
+
+body .bs-datepicker-body table td span {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+body .bs-datepicker-body table.days span {
+    font-weight: 400;
+    height: 32px;
+    line-height: 32px;
+    width: 32px;
+}
+
+body .theme-green .bs-datepicker-body table td span.selected,
+body .theme-green .bs-datepicker-body table td.selected span,
+body .theme-green .bs-datepicker-body table td span[class*="select-"]:after,
+body .theme-green .bs-datepicker-body table td[class*="select-"] span:after {
+    background-color: #229BFF;
+}
+
+body .custom-today-class {
+    background-color: #229BFF;
+    color: #fff;
+}
+
+@media(max-width:1024px) and (min-width:576px) {
+
+    body .bs-datepicker-container {
+        max-width: 200px;
+    }
+
+    body .theme-green .bs-datepicker-head {
+        min-width: 200px;
+        padding: 10px 5px;
+    }
+
+    .bs-datepicker-head {
+        padding: 10px 5px;
+    }
+
+    body .bs-datepicker-head button.next,
+    body .bs-datepicker-head button.previous {
+        align-items: center;
+        justify-content: center;
+        max-width: 10px;
+        width: 10px;
+    }
+
+    body .bs-datepicker-head button.current {
+        padding: 0 0px;
+        width: 70px;
+    }
+
+    body .bs-datepicker-head button.current span {
+        background: transparent url('/assets/svg-img/datepicker-arrow.svg') no-repeat calc(100% - 5px) center/8px;
+        padding: 0 10px 0 5px;
+        font-size: 10px;
+    }
+
+    body .bs-datepicker-head button.next span,
+    body .bs-datepicker-head button.previous span {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    body .bs-datepicker-body table th {
+        font-size: 10px;
+    }
+
+    body .bs-datepicker-body table.days span {
+        height: 25px;
+        line-height: 25px;
+        width: 25px;
+    }
+
+    body .bs-datepicker-body table td span {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,54 @@
+<div class="hs-inner-tab-container">
+    <div class="interviw-response-box table data_table_area" *ngIf="interviewList?.length>0">
+        <div class="table-header">
+            <div class="table-row">
+                <div class="left">
+                    <div class="table-col title">
+                        Candidate
+                    </div>
+                    <div class="table-col star">
+                       Skills
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="table-col interview-date">
+                        Interview Date
+                    </div>
+                    <div class="table-col status">
+                        Status
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-body">
+            <div id="devRef{{i}}" class="table-row" *ngFor="let interview of interviewList;let i = index">
+                <div class="left" (click)="expandRow('devRef' + i, interview)">
+                    <div class="table-col title">
+                        {{interview.profileDetails.candidateFirstName+' '+interview.profileDetails.candidateLastName}}
+                    </div>
+                    <div class="table-col star">
+                        {{interview.profileDetails.keySkills}}
+                    </div>
+                </div>
+                <div class="right" (click)="expandRow('devRef' + i, interview)">
+                    <div class="table-col interview-date">
+                        {{ interview.interviewDetails.interviewDate+' '+interview.interviewDetails.interviewStartTime }}
+                    </div>
+                    
+                    <div class="table-col status">
+                        <span class="status-btn-wrapper"
+                            [innerHtml]="interview.interviewDetails.currentState | interviewState"></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div *ngIf="interviewList?.length==0">
+        <div class="table-nodata">
+            No Data Found
+        </div>
+    </div>
+</div>

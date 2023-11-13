@@ -1,0 +1,8 @@
+<div class="toastr-wrapper" [class]="toastrData?.toastrClass" [style.opacity]="setOpacity">
+    <i class="toastr-icon fa-solid" [class]="toastrData?.iconClass"></i>
+    <button class="toastr-close-button" (click)="closeToastr();setOpacity=0;">
+      <span>×</span>
+    </button>
+    <div class="toastr-title" >{{ toastrData?.text }}</div>
+  </div>
+  

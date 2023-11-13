@@ -1,0 +1,154 @@
+<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+<div class="hs-job-list-wrapper sent-joboffer">
+  <div class="title_bar_area">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class="left-pane">
+          <header class="hs-page-title-wrapper">
+            <div class="hs-page-title">
+              <figure class="title-text-icon">
+                <img src="assets/svg-img/sent-job-offer-page-title.svg" alt="sent-job-offers" />
+              </figure>
+              <div class="title-text mr-2">
+                Positions
+              </div>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div #filterPanel class="filter_area search_bar_m" (click)="removeClass(filterPanel, $event, 'filter-bar-inner')">
+  <div class="filter-bar-inner">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="filter_area">
+          <div class="form-group-with-clear">
+            <form class="form-group has-search" autocomplete="off" [formGroup]="searchForm">
+              <input type="text" class="form-control with-icon" formControlName="searchTxt"
+                (ngModelChange)="onSearch($event)" placeholder="Search">
+              <span class="form-control-feedback">
+                <img src="/assets/svg-img/search.svg" alt="search">
+              </span>
+            </form>
+            <div class="hs-clear-text-wrapper" *ngIf="this.searchTxt.value?.length > 0">
+              <a href="javascript:void(0);" class="hs-clear-text" (click)="clearSearch()">clear</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div #statusPanel class="status_area status_bar_m" (click)="removeClass(statusPanel, $event, 'status-bar-inner')">
+  <div class="status-bar-inner">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+        <div class="status-bar-wrapper">
+          <ul>
+            <li class="status-tab" [ngClass]="stateSelected==''?'selected new':''">
+              <button class="btn btn-status new" (click)="fetchPositionList('All')">All</button>
+            </li>
+            <li class="status-tab" *ngFor="let state of stateList" (click)="fetchPositionList(state)"
+              [ngClass]="state | postionStateSelected:stateSelected">
+              <span class="status-btn-wrapper" [innerHtml]="state | postionState"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sent-job-offers table data_table_area">
+  <div class="table-header">
+    <div class="table-row">
+      <div class="left">
+        <div class="table-col id" (click)="doSorting(fieldList[0])">
+          ID<span [ngClass]="fieldList[0].sortingClass"></span>
+        </div>
+        <div class="table-col title" (click)="doSorting(fieldList[1])">
+          Title
+          <span [ngClass]="fieldList[1].sortingClass"></span>
+        </div>
+        <div class="table-col project" (click)="doSorting(fieldList[2])">
+          Project
+          <span [ngClass]="fieldList[2].sortingClass"></span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="table-col client" (click)="doSorting(fieldList[3])">
+          Client
+          <span [ngClass]="fieldList[3].sortingClass"></span>
+        </div>
+        <div class="table-col status" (click)="doSorting(fieldList[4])">
+          Status
+          <span [ngClass]="fieldList[4].sortingClass"></span>
+        </div>
+        <div class="table-col rrfYear" (click)="doSorting(fieldList[5])">
+          RRF Year
+          <span [ngClass]="fieldList[5].sortingClass"></span>
+        </div>
+        <div class="table-col rrfNumber" (click)="doSorting(fieldList[6])">
+          RRF #
+          <span [ngClass]="fieldList[6].sortingClass"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-body-pagination-wrapper">
+    <div class="table-body">
+      <div class="table-row"
+        *ngFor="let data of dataListObs|async|paginate: { id: 'server', itemsPerPage: pageSize, currentPage: 1, totalItems: totalNumberOfrecords };"
+        (click)="rowCallback(data)">
+        <div class="left">
+          <div class="table-col id">
+            <span class="job_id">
+              {{ data.displayID }}
+            </span>
+          </div>
+          <div class="table-col title">
+            {{ data.jobTitle }}
+          </div>
+          <div class="table-col project">
+            {{ data.projectName }}
+          </div>
+        </div>
+        <div class="right">
+          <div class="table-col client">
+            {{ data.clientName }}
+          </div>
+          <div class="table-col status">
+            <span class="status-btn-wrapper" [innerHtml]="data.currentState | postionState"></span>
+
+          </div>
+          <div class="table-col rrfYear">
+            {{ data.rrfYear }}
+          </div>
+          <div class="table-col rrfNumber">
+            {{ data.rrfNumber }}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="numberOfrecords==0">
+        <div class="table-nodata">
+          No data available
+        </div>
+      </div>
+    </div>
+    <div class="list-pagination-wrapper" *ngIf="numberOfrecords>0">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="list-pagination">
+            <app-custom-pagination [totalRecords]="totalNumberOfrecords" [recordsPerPage]="pageSize"
+              (onPageChange)="getDatalist($event)">
+            </app-custom-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

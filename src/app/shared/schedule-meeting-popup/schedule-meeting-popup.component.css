@@ -1,0 +1,27 @@
+/* interviwer-response-box */
+.table.interviwer-response-box {
+    margin-top: 0px;
+}
+
+.interviwer-response-box .table-header {
+    display: block;
+}
+
+.interviwer-response-box .left {
+    max-width: 100%;
+    padding-left: 0;
+}
+
+.interviwer-response-box .selcheckbox {
+    max-width: 10%;
+}
+
+
+.interviwer-response-box .fullname {
+    max-width: 45%;
+}
+
+.interviwer-response-box .emailaddress{
+    max-width: 45%;
+    justify-content: flex-start;
+}

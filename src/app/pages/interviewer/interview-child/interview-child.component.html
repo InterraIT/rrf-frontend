@@ -1,0 +1,147 @@
+<div class="hs-interviw-response-box-child-wrapper">
+    <div class="hs-table-row-data" *ngIf="childData">
+        <div class="hs-graybg">
+            <div class="row no-gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top: 10px;">
+                    <div class="form-group">
+                        <div class="row no-gutters">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Postion
+                                    </strong>
+                                </p>
+                                {{childData?.positionDetails.jobTitle}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Location
+                                    </strong>
+                                </p>
+                                {{childData?.positionDetails.positionLocation}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Project
+                                    </strong>
+                                </p>
+                                {{childData?.positionDetails.projectName}}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row no-gutters">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Mandatory Skills
+                                    </strong>
+                                </p>
+                                {{childData?.positionDetails.mandatorySkills}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Desirable Skills
+                                    </strong>
+                                </p>
+                                {{childData?.positionDetails.desirableSkills}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Mandatory Education
+                                    </strong>
+                                </p>
+                                {{childData?.positionDetails.educationMandatory}}
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row no-gutters">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Candidate Email
+                                    </strong>
+                                </p>
+                                {{childData?.profileDetails.candidateEmailID}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Candidate Phone
+                                    </strong>
+                                </p>
+                                {{childData?.profileDetails.candidatePhoneNo}}
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        Year Of Experience
+                                    </strong>
+                                </p>
+                                {{childData?.profileDetails.yearOfExperience}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row no-gutters">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <p>
+                                    <strong>
+                                        View Resume
+                                    </strong>
+                                </p>
+                                <ul>
+                                    <li class="single-file white" (click)="onDownloadResume(childData?.profileDetails.curentResume)">
+                                        <span class="attachment">
+                                            <img src="assets/svg-img/attachment-file.svg" alt="file">
+                                        </span>
+                                        <span class="name">
+                                            {{ childData?.profileDetails.curentResume.originalFileName}}
+                                        </span>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngIf="canSeeCompleteBtn==false">
+                                <p>
+                                    <strong>
+                                        View Feedback
+                                    </strong>
+                                </p>
+                                <ul>
+                                    <li class="single-file white" (click)="onOpenFeedbackPopup()">
+                                        <span class="attachment">
+                                            <i class="fa fa-book"></i>
+                                        </span>
+                                        <span class="name">
+                                            IAF
+                                        </span>
+
+                                    </li>
+                                </ul>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hs-award-job-offer-wrapper">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right mb-4">
+                    <button class="ml-2 miw-100 btn btn-sm btn-success" (click)="onCompleteInterviewPopup()" *ngIf="canSeeCompleteBtn">
+                        COMPLETE INTERVIEW
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+/* my-job-schedule-list */
+.interview-schedule-list {
+    margin-top: 0px;
+}
+
+.interview-schedule-list .table-header {
+    display: block;
+}
+
+.interview-schedule-list .left {
+    max-width: 100%;
+    padding-left: 0;
+}
+
+.interview-schedule-list .interviewer {
+    max-width: 25%;
+}
+
+.interview-schedule-list .round {
+    max-width: 15%;
+}
+
+.interview-schedule-list .interview-date {
+    max-width: 25%;
+}
+
+.interview-schedule-list .interview-status {
+    max-width: 20%;
+}
+
+.interview-schedule-list .action {
+    max-width: 15%;
+}

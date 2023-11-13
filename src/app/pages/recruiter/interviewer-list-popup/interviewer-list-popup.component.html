@@ -1,0 +1,87 @@
+<div class="model-inner-content-wrapper" style="width: 700px;">
+    <div class="model-close-icon" (click)="activeModal.dismiss('click')">
+        <img src="assets/svg-img/popup-close.svg" alt="Popup Close" />
+    </div>
+    <div class="model-inner-content no-bg">
+        <div class="hs-participant-list-popup">
+            <div class="modal-header hs-title-with-input">
+                <div class="hs-popup-title">
+                    <h4>Interviewer List</h4>
+                </div>
+                <div class="hs-title-with-search">
+                    <form autocomplete="off" [formGroup]="participantsSearchForm">
+                        <div class="form-group has-search" *ngIf="tempTotalNumberOfrecords > 0">
+                            <input type="text" class="form-control with-icon" formControlName="searchTxt" placeholder="{{'COMMON.SEARCH' | translate}}" (ngModelChange)="onSearch($event)">
+                            <span class="form-control-feedback disabled">
+                                <img src="/assets/svg-img/search.svg" alt="search" />
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="hs-participants-list data_table_area table">
+                    <div class="table-body">
+                        <div id="devRef{{i}}" class="table-row" *ngFor="let userlist of InterviewerList; index as i " [class]="userlist.selected? 'active' : ''">
+                            <!-- <span class="tick"></span> -->
+                            <input type="checkbox" (click)="onSelectBusiness($event, userlist)"
+                                [checked]="userlist.selected">
+                            <div class="left">
+                                <div class="table-col hs-participants-business-details-wrapper">
+                                    <span class="hs-business-details"
+                                        [innerHTML]='userlist | randomRecruiterLogo '></span>
+                                </div>
+                                <div class="hs-business-name-location-wrapper">
+                                    <div class="table-col business-name">
+                                        {{userlist.firstName+ " " + userlist.lastName}}
+
+                                    </div>
+                                    <div class="table-col location">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="right">
+                                <div class="table-col icon">
+                                    <img src="assets/svg-img/participant-arrow.svg" alt="Participant Arrow"
+                                        (click)="expandRow('devRef' + i,userlist)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text" *ngIf="tempTotalNumberOfrecords == 0; else other_data">
+                        </div>
+                        <ng-template #other_data>
+                            <div class="table-nodata" *ngIf="totalNumberOfrecords == 0">
+                                {{ 'COMMON.NO_DATA' | translate}}
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                    <div class="hs-participant-selected-count">
+                        <p>{{slectedParticipantList.length}} {{ slectedParticipantList.length>1? 'Participants Selected'
+                            : 'Participant Selected' }}</p>
+                    </div>
+                </div>
+
+                <div class="hs-participant-btn-wrapper">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                            <div class="hs-button-wrapper">
+                                <button type="button" class="miw-100 btn btn-secondary btn-sm"
+                                    (click)="activeModal.dismiss('click')" ngbAutofocus>
+                                    CANCEL
+                                </button>
+                                <button type="button" class="miw-100 btn btn-success btn-sm ml-2" (click)="onSubmit()">
+                                    OK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

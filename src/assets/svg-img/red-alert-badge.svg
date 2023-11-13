@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="Red_Alert_Badge" data-name="Red Alert Badge" transform="translate(-815 -5709)">
+    <circle id="Ellipse_48" data-name="Ellipse 48" cx="10.5" cy="10.5" r="10.5" transform="translate(817 5711)" fill="#fff"/>
+    <path id="Path_2863" data-name="Path 2863" d="M13.5,1A12.5,12.5,0,1,0,26,13.5,12.5,12.5,0,0,0,13.5,1Zm0,19.973a1.563,1.563,0,1,1,1.563-1.562A1.563,1.563,0,0,1,13.5,20.973Zm1.643-13.3v.007l-.371,7.883h0a1.27,1.27,0,0,1-2.54,0h0l-.371-7.883V7.652h0a1.641,1.641,0,0,1,3.282,0h0v.017Z" transform="translate(814 5708)" fill="#de104f"/>
+  </g>
+</svg>

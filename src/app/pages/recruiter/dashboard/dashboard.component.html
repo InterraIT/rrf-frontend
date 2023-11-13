@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 hs-bottom-margin hs-right-padding">
+      <div class="hs-dashboard-job-offer sent mobile-alignment">
+        <div class="card-body outer">
+          <div class="hs-dashboard-sub-title">
+            <figure class="title-text-icon">
+              <img src="/assets/svg-img/dashboard-sent-job-offer.svg" alt="received offers" />
+            </figure>
+            <div class="title-text">
+              Positions
+            </div>
+          </div>
+  
+          <div>
+            <div class="card shadow inner" (click)="sentJobOfferCallback('Draft')">
+              <div class="card-body inner">
+                <div class="hs-sub-title-text">
+                  <div class="title-text-icon yellow"></div>
+                  <h6>Draft</h6>
+                  <p>{{draftStateCount}}</p>
+                </div>
+                <div _ngcontent-xla-c190="" class="hs-angle-right">
+                  <img src="/assets/svg-img/arrow-yellow-icon.svg" alt="yellow-icon" />
+                </div>
+              </div>
+            </div>
+            <div class="card shadow inner" (click)="sentJobOfferCallback('Open')">
+              <div class="card-body inner">
+                <div class="hs-sub-title-text">
+                  <div class="title-text-icon blue"></div>
+                  <h6>Open</h6>
+                  <p>{{openStateCount}}</p>
+                </div>
+                <div _ngcontent-xla-c190="" class="hs-angle-right">
+                  <img src="/assets/svg-img/arrow-blue-icon.svg" alt="blue-icon" />
+                </div>
+              </div>
+            </div>
+            <div class="card shadow inner" (click)="sentJobOfferCallback('Offered')">
+              <div class="card-body inner">
+                <div class="hs-sub-title-text">
+                  <div class="title-text-icon green"></div>
+                  <h6>Offered</h6>
+                  <p>{{offeredStateCount}}</p>
+                </div>
+                <div _ngcontent-xla-c190="" class="hs-angle-right">
+                  <img src="/assets/svg-img/arrow-green-icon.svg" alt="green-icon" />
+                </div>
+              </div>
+            </div>
+            <div class="card shadow inner" (click)="sentJobOfferCallback('Hired')">
+              <div class="card-body inner">
+                <div class="hs-sub-title-text">
+                  <div class="title-text-icon green"></div>
+                  <h6>Hired</h6>
+                  <p>{{hiredStateCount}}</p>
+                </div>
+                <div _ngcontent-xla-c190="" class="hs-angle-right">
+                  <img src="/assets/svg-img/arrow-green-icon.svg" alt="green-icon" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

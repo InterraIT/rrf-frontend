@@ -1,0 +1,166 @@
+<div class="hs-inner-tab-container hs-job-details outgoing">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 left-panel">
+                    <section>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="hs-title hs-non-edittable-title">
+                                    <h6>
+                                        <span class="hs-title-num">1</span>
+                                        <span class="hs-title-text">
+                                            Position Details
+                                        </span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inner-panel">
+                            <div class="row ">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="jobTitle" class="control-label">
+                                            Title
+                                        </label>
+
+                                        <div class="hs-non-editable-mode">
+                                            <summary>
+                                                {{jobTitle?.value}}
+                                            </summary>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group required">
+                                        <label for="departmentName" class="control-label">
+                                            DepartmentName
+                                        </label>
+                                        <div class="hs-non-editable-mode">
+                                            <summary>
+                                                {{departmentName?.value}}
+                                            </summary>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="startDate" class="control-label">
+                                            ProjectName
+                                        </label>
+
+                                        <div class="hs-non-editable-mode">
+                                            <summary>
+                                                {{projectName?.value}}
+                                            </summary>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="endDate" class="control-label">
+                                            RRF Number
+                                        </label>
+
+                                        <div class="hs-non-editable-mode">
+                                            <summary>
+                                                {{ rrfNumber?.value}}
+                                            </summary>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="startDate" class="control-label">
+                                            StartDate
+                                        </label>
+
+                                        <div class="hs-non-editable-mode">
+                                            <summary>
+                                                {{startDate?.value}}
+                                            </summary>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="endDate" class="control-label">
+                                            EndDate
+                                        </label>
+
+                                        <div class="hs-non-editable-mode">
+                                            <summary>
+                                                {{endDate?.value}}
+                                            </summary>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="startDate" class="control-label">
+                                            SalaryRange
+                                        </label>
+
+                                        <div class="hs-non-editable-mode">
+                                            <summary>
+                                                {{salaryRange?.value}}
+                                            </summary>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="endDate" class="control-label">
+                                            RRF Year
+                                        </label>
+
+                                        <div class="hs-non-editable-mode">
+                                            <summary>
+                                                {{rrfYear?.value}}
+                                            </summary>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 right-panel">
+                    <aside>
+                        <div class="inner-panel">
+                            <div class="hs-participant-list-wrapper">
+                                <div class="hs-title hs-edittable-title">
+                                    <h6>
+                                        <span class="hs-title-num">2</span>
+                                        <span class="hs-title-text">
+                                            Recruiters
+                                        </span>
+                                    </h6>
+                                </div>
+                                <div class="hs-participant-list" *ngIf="recruiterList.length > 0">
+                                    <ul>
+                                        <li class="single-file outgoing" *ngFor="let participant of recruiterList ">
+                                            <span class="name">
+                                                {{participant.name}}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

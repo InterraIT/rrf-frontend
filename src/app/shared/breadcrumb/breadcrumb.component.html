@@ -1,0 +1,13 @@
+<nav aria-label='breadcrumb' class="hs-breadcrumbs-wrapper">
+    <ul class='breadcrumb'>
+      <li *ngFor='let breadcrumb of breadcrumbs'>
+        <a [routerLink]='[breadcrumb.url]' [queryParams]="breadcrumb.fooParams" routerLinkActive='active' *ngIf="breadcrumb.canLink==true">
+          {{ breadcrumb.label }}
+        </a>
+        <a *ngIf="breadcrumb.canLink==false">
+          {{ breadcrumb.label }}
+        </a>
+        <span *ngIf="breadcrumb.isLast==false" class="breadcrumbs-arrow"></span>
+      </li>
+    </ul>
+</nav>

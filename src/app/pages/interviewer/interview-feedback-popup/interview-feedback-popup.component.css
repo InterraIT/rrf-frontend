@@ -1,0 +1,107 @@
+/* interview-feedback-box */
+.modal-body {
+    flex: 1 1 auto;
+    padding: 0%;
+    position: relative;
+}
+
+.table-col {
+    align-items: center;
+    color: #2f383f;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    line-height: 1.5;
+    line-height: 20px;
+    justify-content: flex-start;
+    padding: 15px 5px;
+    position: relative;
+    text-decoration: none;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.modal-body form {
+    padding: 0 0%;
+}
+textarea.form-control {
+    height: auto;
+    display: block;
+    min-height: 50px;
+    resize: both;
+    line-height: 0.25em;
+}
+.table .table-body .sub-table-row {
+    min-height: 30.5px;
+    position: relative;
+    max-width: 100% !important;
+    width: auto !important;
+}
+
+.table .table-body .table-row {
+    border-bottom: 1px solid #b4b6b8;
+    min-height: 30.5px;
+    position: relative;
+    max-width: 100% !important;
+    width: auto !important;
+}
+
+.table.interview-feedback-box .table-body .table-row {
+    cursor: pointer;
+}
+
+.interview-feedback-box .table-header {
+    display: block;
+    background-color: #dfdfdf;
+    border-color: #dfdfdf;
+    color: #82888c;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.3;
+    padding: 15px 5px;
+    text-transform: capitalize;
+    max-width: 100% !important;
+    width: auto !important;
+}
+
+.interview-feedback-box .left {
+    max-width: 100%;
+    width: 100%;
+}
+
+.interview-feedback-box .table-header .requirement {
+    padding-left: 5px;
+}
+
+.interview-feedback-box .table-header .rating {
+    text-align: center;
+}
+
+.interview-feedback-box .table-header .distinguishing-aspect {
+    justify-content: center !important;
+}
+
+.interview-feedback-box .table-header .action {
+    justify-content: center !important;
+}
+
+.interview-feedback-box .requirement {
+    max-width: 30%;
+}
+.interview-feedback-box .rating {
+    max-width: 20%;
+    justify-content: center !important;
+}
+.interview-feedback-box .sub-header {
+    max-width: 100%;
+    border-bottom: 1px solid #b4b6b8;
+}
+.interview-feedback-box .distinguishing-aspect {
+    padding-left: 20px;
+    max-width: 45%;
+    justify-content: flex-start;
+}
+.interview-feedback-box .action {
+    max-width: 5%;
+    justify-content: flex-start;
+}
